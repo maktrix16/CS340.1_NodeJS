@@ -6,7 +6,7 @@ module.exports=function(request,response){
 
 	//style files
 	if(request.url.match(/\/styles\/.*/)) {
-  	  fs.readFile('.'+request.url, 'utf8' , function(errors, contents){
+  	  fs.readFile('./private'+request.url, 'utf8' , function(errors, contents){
   	    response.write(contents);
   	    response.end();
   	  });
@@ -14,7 +14,7 @@ module.exports=function(request,response){
 
   	//image files
 	else if(request.url.match(/\/images\/.*/)) {
-  	  fs.readFile('.'+request.url, function(errors, contents){
+  	  fs.readFile('./private'+request.url, function(errors, contents){
   	    response.write(contents);
   	    response.end();
   	  });
